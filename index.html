@@ -1,23 +1,456 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToolPulse AutoPublisher</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#0F172A',
+                        cardbg: '#1E293B',
+                        accent: '#3B82F6',
+                        accenthover: '#2563EB',
+                        bordercolor: '#334155'
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-align: center; padding: 80px 20px; color: #222; }
-        h1 { font-size: 2.5em; margin-bottom: 10px; }
-        p { color: #666; max-width: 600px; margin: 0 auto 30px auto; line-height: 1.6; }
-        .links a { margin: 0 15px; color: #0066cc; text-decoration: none; font-weight: 500; }
-        .links a:hover { text-decoration: underline; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
     </style>
 </head>
-<body>
-    <h1>ToolPulse AutoPublisher</h1>
-    <p>Automated multi-platform video distribution and content workflow system for software developers and creators.</p>
-    <div class="links">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+
+    <!-- LOGIN MODAL GATEWAY -->
+    <div id="loginModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/90 backdrop-blur-md px-4">
+        <div class="glass w-full max-w-md p-8 rounded-2xl shadow-2xl border border-slate-800 text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-500/10 text-blue-400 mb-4 border border-blue-500/20">
+                <i class="fa-solid fa-robot text-3xl text-blue-400"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-white mb-2">Pipeline Dashboard</h2>
+            <p class="text-slate-400 text-sm mb-6">Enter your authorized credentials to unlock the analytics console.</p>
+            
+            <div id="loginError" class="hidden mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-xs text-left">
+                <i class="fa-solid fa-circle-exclamation mr-1"></i> Invalid username or password. Please try again.
+            </div>
+
+            <form id="loginForm" onsubmit="handleLogin(event)" class="space-y-4 text-left">
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Username</label>
+                    <div class="relative">
+                        <i class="fa-solid fa-user absolute left-3.5 top-3.5 text-slate-500"></i>
+                        <input type="text" id="usernameInput" required placeholder="Username" class="w-full pl-10 pr-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl focus:outline-none focus:border-blue-500 text-white text-sm">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Password</label>
+                    <div class="relative">
+                        <i class="fa-solid fa-lock absolute left-3.5 top-3.5 text-slate-500"></i>
+                        <input type="password" id="passwordInput" required placeholder="••••••••" class="w-full pl-10 pr-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl focus:outline-none focus:border-blue-500 text-white text-sm">
+                    </div>
+                </div>
+                <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-500 font-semibold text-white rounded-xl shadow-lg shadow-blue-600/20 transition-all flex items-center justify-center space-x-2">
+                    <span>Unlock Dashboard</span>
+                    <i class="fa-solid fa-arrow-right text-sm"></i>
+                </button>
+            </form>
+        </div>
     </div>
+
+    <!-- MAIN DASHBOARD CONTENT CONTAINER -->
+    <div id="dashboardApp" class="hidden flex-1 flex flex-col max-w-7xl w-full mx-auto px-4 py-6">
+        
+        <!-- HEADER BAR -->
+        <header class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800 mb-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400">
+                    <i class="fa-solid fa-bolt text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-white tracking-tight flex items-center gap-2">
+                        ToolPulse AutoPublisher
+                        <span class="text-xs font-normal px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Cloud Active
+                        </span>
+                    </h1>
+                    <p class="text-xs text-slate-400">Multi-Channel & Multi-Platform Distribution Console</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+                <button onclick="fetchPipelineData()" class="px-3.5 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded-xl text-slate-300 text-xs font-medium transition flex items-center space-x-2">
+                    <i class="fa-solid fa-rotate text-slate-400"></i>
+                    <span>Refresh</span>
+                </button>
+                <button onclick="handleLogout()" class="px-3.5 py-2 bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 rounded-xl text-red-400 text-xs font-medium transition flex items-center space-x-1.5">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- STATS SUMMARY CARDS -->
+        <div class="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
+            <div class="glass p-4 rounded-2xl border border-slate-800">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-medium text-slate-400">Total Videos</span>
+                    <i class="fa-solid fa-video text-blue-400"></i>
+                </div>
+                <div id="statTotal" class="text-2xl font-bold text-white">0</div>
+                <span class="text-[10px] text-slate-500">Across 3 Sub-Channels</span>
+            </div>
+
+            <div class="glass p-4 rounded-2xl border border-slate-800">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-medium text-slate-400">YouTube Shorts</span>
+                    <i class="fa-brands fa-youtube text-red-500"></i>
+                </div>
+                <div id="statYT" class="text-2xl font-bold text-red-400">0</div>
+                <span class="text-[10px] text-slate-500">Published Videos</span>
+            </div>
+
+            <div class="glass p-4 rounded-2xl border border-slate-800">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-medium text-slate-400">Facebook Reels</span>
+                    <i class="fa-brands fa-facebook text-blue-500"></i>
+                </div>
+                <div id="statFB" class="text-2xl font-bold text-blue-400">0</div>
+                <span class="text-[10px] text-slate-500">Published Reels</span>
+            </div>
+
+            <div class="glass p-4 rounded-2xl border border-slate-800">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-medium text-slate-400">Instagram Reels</span>
+                    <i class="fa-brands fa-instagram text-pink-500"></i>
+                </div>
+                <div id="statIG" class="text-2xl font-bold text-pink-400">0</div>
+                <span class="text-[10px] text-slate-500">Published Reels</span>
+            </div>
+
+            <div class="glass p-4 rounded-2xl border border-slate-800 col-span-2 lg:col-span-1">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-medium text-slate-400">TikTok Direct</span>
+                    <i class="fa-brands fa-tiktok text-cyan-400"></i>
+                </div>
+                <div id="statTT" class="text-2xl font-bold text-cyan-400">0</div>
+                <span class="text-[10px] text-slate-500">Direct Posts</span>
+            </div>
+        </div>
+
+        <!-- NAVIGATION TABS & FILTERS -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+            <div class="flex items-center space-x-2 bg-slate-900 p-1 rounded-xl border border-slate-800 self-start">
+                <button onclick="switchTab('publishing')" id="tabPublishingBtn" class="px-4 py-2 rounded-lg text-xs font-semibold transition bg-blue-600 text-white shadow">
+                    <i class="fa-solid fa-list-check mr-1.5"></i> Publishing Log
+                </button>
+                <button onclick="switchTab('tools')" id="tabToolsBtn" class="px-4 py-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition">
+                    <i class="fa-solid fa-screwdriver-wrench mr-1.5"></i> Tool History
+                </button>
+            </div>
+
+            <div id="filtersContainer" class="flex flex-col sm:flex-row items-center gap-3">
+                <div class="relative w-full sm:w-64">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-500 text-xs"></i>
+                    <input type="text" id="searchInput" oninput="renderTable()" placeholder="Search video title..." class="w-full pl-9 pr-4 py-2 bg-slate-900 border border-slate-800 rounded-xl focus:outline-none focus:border-blue-500 text-white text-xs">
+                </div>
+
+                <select id="channelFilter" onchange="renderTable()" class="w-full sm:w-48 py-2 px-3 bg-slate-900 border border-slate-800 rounded-xl focus:outline-none focus:border-blue-500 text-white text-xs">
+                    <option value="ALL">All Sub-Channels</option>
+                    <option value="ToolPulse (Tech)">ToolPulse (Tech)</option>
+                    <option value="Stoic Pulse (Stoicism)">Stoic Pulse (Stoicism)</option>
+                    <option value="Echo Pulse (Story Time)">Echo Pulse (Story Time)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- TAB 1: PUBLISHING LOG TABLE -->
+        <div id="publishingTab" class="glass rounded-2xl border border-slate-800 overflow-hidden flex-1 mb-6">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs text-slate-300">
+                    <thead class="bg-slate-900/90 text-slate-400 uppercase tracking-wider text-[11px] border-b border-slate-800">
+                        <tr>
+                            <th class="py-3.5 px-4 font-semibold">Timestamp</th>
+                            <th class="py-3.5 px-4 font-semibold">Channel</th>
+                            <th class="py-3.5 px-4 font-semibold">Video Title</th>
+                            <th class="py-3.5 px-4 font-semibold text-center"><i class="fa-brands fa-youtube text-red-500 mr-1"></i> YouTube</th>
+                            <th class="py-3.5 px-4 font-semibold text-center"><i class="fa-brands fa-facebook text-blue-500 mr-1"></i> Facebook</th>
+                            <th class="py-3.5 px-4 font-semibold text-center"><i class="fa-brands fa-instagram text-pink-500 mr-1"></i> Instagram</th>
+                            <th class="py-3.5 px-4 font-semibold text-center"><i class="fa-brands fa-tiktok text-cyan-400 mr-1"></i> TikTok</th>
+                        </tr>
+                    </thead>
+                    <tbody id="publishingTableBody" class="divide-y divide-slate-800/60 font-normal">
+                        <!-- Dynamic Rows Injected Here -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="publishingEmptyState" class="hidden p-12 text-center text-slate-500 text-xs">
+                <i class="fa-solid fa-folder-open text-3xl mb-2 text-slate-600"></i>
+                <p>No video publication records match your filters.</p>
+            </div>
+        </div>
+
+        <!-- TAB 2: TOOL HISTORY TABLE -->
+        <div id="toolsTab" class="hidden glass rounded-2xl border border-slate-800 overflow-hidden flex-1 mb-6">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs text-slate-300">
+                    <thead class="bg-slate-900/90 text-slate-400 uppercase tracking-wider text-[11px] border-b border-slate-800">
+                        <tr>
+                            <th class="py-3.5 px-4 font-semibold">Date Featured</th>
+                            <th class="py-3.5 px-4 font-semibold">Tool Name</th>
+                            <th class="py-3.5 px-4 font-semibold">Category</th>
+                            <th class="py-3.5 px-4 font-semibold">Tagline / Description</th>
+                        </tr>
+                    </thead>
+                    <tbody id="toolsTableBody" class="divide-y divide-slate-800/60 font-normal">
+                        <!-- Dynamic Tool Rows Injected Here -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="toolsEmptyState" class="hidden p-12 text-center text-slate-500 text-xs">
+                <i class="fa-solid fa-microchip text-3xl mb-2 text-slate-600"></i>
+                <p>No tool history recorded yet.</p>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="text-center text-[11px] text-slate-500 pt-4 pb-2 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <div>ToolPulse AutoPublisher v2.0 · Automated Cloud Execution</div>
+            <div>Scheduled Daily at 13:15 UTC (6:15 PM PKT) · <a href="privacy.html" target="_blank" class="hover:text-slate-400 underline text-slate-400">Privacy Policy</a></div>
+        </footer>
+    </div>
+
+    <!-- JAVASCRIPT APP LOGIC -->
+    <script>
+        let rawVideosData = [];
+        let rawToolsData = [];
+
+        // Authentication handler
+        function checkAuth() {
+            const isAuth = sessionStorage.getItem('mazhar_authenticated');
+            if (isAuth === 'true') {
+                document.getElementById('loginModal').classList.add('hidden');
+                document.getElementById('dashboardApp').classList.remove('hidden');
+                fetchPipelineData();
+            } else {
+                document.getElementById('loginModal').classList.remove('hidden');
+                document.getElementById('dashboardApp').classList.add('hidden');
+            }
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const user = document.getElementById('usernameInput').value.trim();
+            const pass = document.getElementById('passwordInput').value.trim();
+
+            if (user === 'mazhar' && pass === 'mazhar') {
+                sessionStorage.setItem('mazhar_authenticated', 'true');
+                document.getElementById('loginError').classList.add('hidden');
+                checkAuth();
+            } else {
+                document.getElementById('loginError').classList.remove('hidden');
+            }
+        }
+
+        function handleLogout() {
+            sessionStorage.removeItem('mazhar_authenticated');
+            checkAuth();
+        }
+
+        // Fetch published_videos.json and tool_history.json
+        async function fetchPipelineData() {
+            try {
+                const vidRes = await fetch('published_videos.json?t=' + Date.now());
+                if (vidRes.ok) {
+                    rawVideosData = await vidRes.json();
+                } else {
+                    rawVideosData = [];
+                }
+            } catch (err) {
+                console.warn('Could not load published_videos.json:', err);
+                rawVideosData = [];
+            }
+
+            try {
+                const toolRes = await fetch('tool_history.json?t=' + Date.now());
+                if (toolRes.ok) {
+                    rawToolsData = await toolRes.json();
+                } else {
+                    rawToolsData = [];
+                }
+            } catch (err) {
+                console.warn('Could not load tool_history.json:', err);
+                rawToolsData = [];
+            }
+
+            calculateStats();
+            renderTable();
+            renderToolsTable();
+        }
+
+        // Stats calculation
+        function calculateStats() {
+            document.getElementById('statTotal').innerText = rawVideosData.length;
+
+            let ytCount = 0, fbCount = 0, igCount = 0, ttCount = 0;
+
+            rawVideosData.forEach(item => {
+                const p = item.platform_statuses || {};
+                const mainStatus = item.status || 'PUBLISHED';
+
+                if ((p.youtube || mainStatus) === 'PUBLISHED') ytCount++;
+                if (p.facebook === 'PUBLISHED') fbCount++;
+                if (p.instagram === 'PUBLISHED') igCount++;
+                if (p.tiktok === 'PUBLISHED') ttCount++;
+            });
+
+            document.getElementById('statYT').innerText = ytCount;
+            document.getElementById('statFB').innerText = fbCount;
+            document.getElementById('statIG').innerText = igCount;
+            document.getElementById('statTT').innerText = ttCount;
+        }
+
+        // Render publishing table
+        function renderTable() {
+            const tbody = document.getElementById('publishingTableBody');
+            const search = document.getElementById('searchInput').value.toLowerCase().trim();
+            const channelFilter = document.getElementById('channelFilter').value;
+
+            tbody.innerHTML = '';
+
+            const filtered = rawVideosData.filter(rec => {
+                const chMatch = channelFilter === 'ALL' || (rec.channel && rec.channel.includes(channelFilter.replace(/ \(.*/, '')));
+                const titleMatch = !search || (rec.title && rec.title.toLowerCase().includes(search));
+                return chMatch && titleMatch;
+            });
+
+            if (filtered.length === 0) {
+                document.getElementById('publishingEmptyState').classList.remove('hidden');
+                return;
+            } else {
+                document.getElementById('publishingEmptyState').classList.add('hidden');
+            }
+
+            // Render in reverse chronological order
+            filtered.slice().reverse().forEach(rec => {
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-slate-900/50 transition';
+
+                const ts = (rec.timestamp || 'N/A').replace('T', ' ').slice(0, 19);
+                const ch = rec.channel || 'Unknown';
+                const title = rec.title || 'Untitled';
+                const ytUrl = rec.youtube_url;
+
+                const p = rec.platform_statuses || {};
+                const ytSt = p.youtube || rec.status || 'PUBLISHED';
+                const fbSt = p.facebook || 'SKIPPED';
+                const igSt = p.instagram || 'SKIPPED';
+                const ttSt = p.tiktok || 'SKIPPED';
+
+                // Channel badge styling
+                let chBadgeClass = 'bg-blue-500/10 text-blue-400 border-blue-500/20';
+                if (ch.includes('Stoic')) chBadgeClass = 'bg-amber-500/10 text-amber-400 border-amber-500/20';
+                if (ch.includes('Echo')) chBadgeClass = 'bg-purple-500/10 text-purple-400 border-purple-500/20';
+
+                tr.innerHTML = `
+                    <td class="py-3 px-4 whitespace-nowrap text-slate-400 font-mono text-[11px]">${ts}</td>
+                    <td class="py-3 px-4 whitespace-nowrap">
+                        <span class="px-2.5 py-1 rounded-full text-[11px] font-medium border ${chBadgeClass}">${ch}</span>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-white max-w-xs truncate" title="${title}">
+                        ${ytUrl && ytUrl !== 'N/A' ? `<a href="${ytUrl}" target="_blank" class="hover:underline hover:text-blue-400">${title} <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i></a>` : title}
+                    </td>
+                    <td class="py-3 px-4 text-center">${formatStatusBadge(ytSt)}</td>
+                    <td class="py-3 px-4 text-center">${formatStatusBadge(fbSt)}</td>
+                    <td class="py-3 px-4 text-center">${formatStatusBadge(igSt)}</td>
+                    <td class="py-3 px-4 text-center">${formatStatusBadge(ttSt)}</td>
+                `;
+
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Format status badge pill with tooltip
+        function formatStatusBadge(statusStr) {
+            if (!statusStr) return `<span class="text-slate-500">-</span>`;
+            
+            const raw = String(statusStr);
+            const s = raw.toUpperCase();
+
+            if (s.includes('PUBLISHED')) {
+                return `<span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold text-[10px] inline-flex items-center"><i class="fa-solid fa-check mr-1 text-[9px]"></i> Uploaded</span>`;
+            } else if (s.includes('FAILED')) {
+                const reason = raw.includes('(') ? raw.slice(raw.indexOf('(') + 1, raw.lastIndexOf(')')).trim() : 'API authorization or credential error';
+                return `<span class="px-2.5 py-0.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 font-semibold text-[10px] inline-flex items-center cursor-help" title="Failure details: ${reason}"><i class="fa-solid fa-circle-exclamation mr-1 text-[9px]"></i> Failed</span>`;
+            } else {
+                return `<span class="px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700 font-medium text-[10px] inline-flex items-center" title="Skipped: Credentials missing in GitHub Repository Secrets"><i class="fa-solid fa-circle-minus mr-1 text-[9px]"></i> Skipped</span>`;
+            }
+        }
+
+        // Render tool history table
+        function renderToolsTable() {
+            const tbody = document.getElementById('toolsTableBody');
+            tbody.innerHTML = '';
+
+            if (rawToolsData.length === 0) {
+                document.getElementById('toolsEmptyState').classList.remove('hidden');
+                return;
+            } else {
+                document.getElementById('toolsEmptyState').classList.add('hidden');
+            }
+
+            rawToolsData.slice().reverse().forEach(item => {
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-slate-900/50 transition';
+
+                const name = typeof item === 'object' ? item.name : item;
+                const cat = (typeof item === 'object' && item.category) ? item.category : 'AI Tools';
+                const date = (typeof item === 'object' && item.date_used) ? item.date_used : 'N/A';
+                const tagline = (typeof item === 'object' && item.tagline) ? item.tagline : '';
+
+                tr.innerHTML = `
+                    <td class="py-3 px-4 whitespace-nowrap text-slate-400 font-mono text-[11px]">${date}</td>
+                    <td class="py-3 px-4 font-semibold text-white">${name}</td>
+                    <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20 text-[10px]">${cat}</span></td>
+                    <td class="py-3 px-4 text-slate-300">${tagline}</td>
+                `;
+
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Tab switching
+        function switchTab(tab) {
+            const pubTab = document.getElementById('publishingTab');
+            const toolsTab = document.getElementById('toolsTab');
+            const pubBtn = document.getElementById('tabPublishingBtn');
+            const toolsBtn = document.getElementById('tabToolsBtn');
+
+            if (tab === 'publishing') {
+                pubTab.classList.remove('hidden');
+                toolsTab.classList.add('hidden');
+                pubBtn.className = 'px-4 py-2 rounded-lg text-xs font-semibold transition bg-blue-600 text-white shadow';
+                toolsBtn.className = 'px-4 py-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition';
+            } else {
+                pubTab.classList.add('hidden');
+                toolsTab.classList.remove('hidden');
+                pubBtn.className = 'px-4 py-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition';
+                toolsBtn.className = 'px-4 py-2 rounded-lg text-xs font-semibold transition bg-blue-600 text-white shadow';
+            }
+        }
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', checkAuth);
+    </script>
 </body>
 </html>

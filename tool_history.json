@@ -1,0 +1,191 @@
+[
+  {
+    "name": "Claude 3.5 Sonnet",
+    "category": "Coding & Logic",
+    "date_used": "2026-09-06",
+    "tagline": "Effortless Coding & Deep Reasoning",
+    "affiliate_slug": "claude"
+  },
+  {
+    "name": "Cursor AI",
+    "category": "Coding & IDE",
+    "date_used": "2026-09-06",
+    "tagline": "Full-Repo AI Code Editing",
+    "affiliate_slug": "cursor"
+  },
+  {
+    "name": "Supermaven",
+    "category": "Code Completion",
+    "date_used": "2026-09-06",
+    "tagline": "Ultra-Fast Neural Code Completion",
+    "affiliate_slug": "supermaven"
+  },
+  {
+    "name": "Bolt.new",
+    "category": "Fullstack Web AI",
+    "date_used": "2026-09-06",
+    "tagline": "In-Browser Fullstack App Builder",
+    "affiliate_slug": "bolt.new"
+  },
+  {
+    "name": "Perplexity Pro",
+    "category": "AI Research",
+    "date_used": "2026-09-06",
+    "tagline": "Live Web Answer Engine",
+    "affiliate_slug": "perplexitypro"
+  },
+  {
+    "name": "ElevenLabs",
+    "category": "Voice AI",
+    "date_used": "2026-09-06",
+    "tagline": "Hyper-Realistic Voice Generation",
+    "affiliate_slug": "elevenlabs"
+  },
+  {
+    "name": "Recraft AI",
+    "category": "Vector Design",
+    "date_used": "2026-09-08",
+    "tagline": "Generative Vector & Icon Graphics",
+    "affiliate_slug": "recraftai"
+  },
+  {
+    "name": "Make.com",
+    "category": "Visual Automation",
+    "date_used": "2026-09-08",
+    "tagline": "Visual Automated Workflow Engine",
+    "affiliate_slug": "make.com"
+  },
+  {
+    "name": "Gamma App",
+    "category": "Presentation AI",
+    "date_used": "2026-09-08",
+    "tagline": "Instant Decks & Web Documents",
+    "affiliate_slug": "gammaapp"
+  },
+  {
+    "name": "v0.dev by Vercel",
+    "category": "UI Design to Code",
+    "date_used": "2026-09-08",
+    "tagline": "Generative UI to React & Tailwind",
+    "affiliate_slug": "v0.devbyvercel"
+  },
+  {
+    "name": "Windsurf IDE",
+    "category": "AI Agentic Editor",
+    "date_used": "2026-09-08",
+    "tagline": "Agentic Cascade Developer Flow",
+    "affiliate_slug": "windsurfide"
+  },
+  {
+    "name": "Lovable.dev",
+    "category": "Fullstack Web Studio",
+    "date_used": "2026-09-08",
+    "tagline": "Generative Web App Studio",
+    "affiliate_slug": "lovable.dev"
+  },
+  {
+    "name": "Replit Agent",
+    "category": "Autonomous Coding",
+    "date_used": "2026-09-08",
+    "tagline": "Autonomous Software Builder",
+    "affiliate_slug": "replitagent"
+  },
+  {
+    "name": "Suno AI",
+    "category": "Music Generation",
+    "date_used": "2026-09-08",
+    "tagline": "Full Song Studio Audio Creator",
+    "affiliate_slug": "sunoai"
+  },
+  {
+    "name": "Udio",
+    "category": "Music Production",
+    "date_used": "2026-09-08",
+    "tagline": "High-Fidelity AI Music Studio",
+    "affiliate_slug": "udio"
+  },
+  {
+    "name": "Descript",
+    "category": "Video & Audio Editing",
+    "date_used": "2026-09-08",
+    "tagline": "Text-Based Video Editing Studio",
+    "affiliate_slug": "descript"
+  },
+  {
+    "name": "PlayHT",
+    "category": "Conversational Voice",
+    "date_used": "2026-09-08",
+    "tagline": "Real-Time Conversational AI Voice",
+    "affiliate_slug": "playht"
+  },
+  {
+    "name": "Genspark",
+    "category": "Autonomous Research",
+    "date_used": "2026-09-08",
+    "tagline": "Autonomous Sparkpage Reports",
+    "affiliate_slug": "genspark"
+  },
+  {
+    "name": "Google NotebookLM",
+    "category": "Research & Learning",
+    "date_used": "2026-09-08",
+    "tagline": "Turn Documents Into Instant Audio Podcasts",
+    "affiliate_slug": "googlenotebooklm"
+  },
+  {
+    "name": "Julius AI",
+    "category": "Data Analytics",
+    "date_used": "2026-09-08",
+    "tagline": "Your Personal Natural Language Data Scientist",
+    "affiliate_slug": "juliusai"
+  },
+  {
+    "name": "Krea AI",
+    "category": "Creative Design",
+    "date_used": "2026-09-08",
+    "tagline": "Real-Time AI Canvas and Video Generation",
+    "affiliate_slug": "kreaai"
+  },
+  {
+    "name": "Napkin AI",
+    "category": "Visual Content",
+    "date_used": "2026-09-08",
+    "tagline": "Turn Text Into Interactive Visuals",
+    "affiliate_slug": "napkinai"
+  },
+  {
+    "name": "Granola",
+    "category": "Productivity",
+    "date_used": "2026-09-08",
+    "tagline": "The Smart AI Notepad for Meetings",
+    "affiliate_slug": "granola"
+  },
+  {
+    "name": "Kling AI",
+    "category": "Video Generation",
+    "date_used": "2026-09-08",
+    "tagline": "Hyper-Realistic AI Video Creator",
+    "affiliate_slug": "klingai"
+  },
+  {
+    "name": "Limitless AI",
+    "category": "Productivity",
+    "date_used": "2026-09-09",
+    "tagline": "Your AI assistant that remembers everything you hear and say",
+    "affiliate_slug": "limitlessai"
+  },
+  {
+    "name": "Galileo AI",
+    "category": "Design",
+    "date_used": "2026-09-09",
+    "tagline": "Generate editable UI/UX designs in seconds from text",
+    "affiliate_slug": "galileoai"
+  },
+  {
+    "name": "Consensus",
+    "category": "Research",
+    "date_used": "2026-09-09",
+    "tagline": "The AI-powered search engine for scientific research",
+    "affiliate_slug": "consensus"
+  }
+]
