@@ -68,6 +68,53 @@
         </div>
     </div>
 
+    <!-- ERROR DIAGNOSTIC MODAL -->
+    <div id="errorModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-md px-4">
+        <div class="glass w-full max-w-lg p-6 rounded-2xl shadow-2xl border border-red-500/30 text-left">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400">
+                        <i class="fa-solid fa-triangle-exclamation text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-white" id="errorModalTitle">Upload Error Diagnostics</h3>
+                        <p class="text-xs text-slate-400" id="errorModalPlatform">Platform Diagnostic Details</p>
+                    </div>
+                </div>
+                <button onclick="closeErrorModal()" class="text-slate-400 hover:text-white transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1">Identified Root Cause</label>
+                    <div class="p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-300 text-xs font-medium" id="errorModalCause">
+                        Analyzing error...
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1">Recommended Resolution Step</label>
+                    <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs leading-relaxed" id="errorModalFix">
+                        Follow resolution instructions...
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1">Raw API Traceback / Log</label>
+                    <pre class="p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-400 font-mono text-[11px] overflow-x-auto max-h-36 whitespace-pre-wrap" id="errorModalTrace">No raw traceback logged.</pre>
+                </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-800 text-right">
+                <button onclick="closeErrorModal()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-xl transition">
+                    Close Diagnostic
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- MAIN DASHBOARD CONTENT CONTAINER -->
     <div id="dashboardApp" class="hidden flex-1 flex flex-col max-w-7xl w-full mx-auto px-4 py-6">
         
@@ -370,18 +417,51 @@
                     <td class="py-3 px-4 font-medium text-white max-w-xs truncate" title="${title}">
                         ${ytUrl && ytUrl !== 'N/A' ? `<a href="${ytUrl}" target="_blank" class="hover:underline hover:text-blue-400">${title} <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i></a>` : title}
                     </td>
-                    <td class="py-3 px-4 text-center">${formatStatusBadge(ytSt)}</td>
-                    <td class="py-3 px-4 text-center">${formatStatusBadge(fbSt)}</td>
-                    <td class="py-3 px-4 text-center">${formatStatusBadge(igSt)}</td>
-                    <td class="py-3 px-4 text-center">${formatStatusBadge(ttSt)}</td>
+                    <td class="py-3 px-4 text-center">${formatStatusBadge('YouTube Shorts', ytSt)}</td>
+                    <td class="py-3 px-4 text-center">${formatStatusBadge('Facebook Reels', fbSt)}</td>
+                    <td class="py-3 px-4 text-center">${formatStatusBadge('Instagram Reels', igSt)}</td>
+                    <td class="py-3 px-4 text-center">${formatStatusBadge('TikTok Direct', ttSt)}</td>
                 `;
 
                 tbody.appendChild(tr);
             });
         }
 
-        // Format status badge pill with tooltip
-        function formatStatusBadge(statusStr) {
+        // Detailed Error Diagnosis Parser and Modal Trigger
+        function diagnoseError(platform, rawStatus) {
+            const raw = String(rawStatus || '');
+            let cause = "API Request or Authorization Failure";
+            let fix = "Review system logs and verify platform credentials.";
+
+            const lower = raw.toLowerCase();
+            if (raw.includes('190') || lower.includes('expired') || lower.includes('session has expired')) {
+                cause = "Meta Page Access Token Expired (OAuth Code 190).";
+                fix = "Generate a fresh 60-day Page Access Token in Graph API Explorer / Access Token Debugger, then update PAGE_ACCESS_TOKEN and INSTAGRAM_ACCESS_TOKEN in .env and GitHub Secrets.";
+            } else if (lower.includes('quotaexceeded') || lower.includes('quota')) {
+                cause = "YouTube Data API v3 Daily Quota Exceeded (10,000 units/day limit).";
+                fix = "YouTube upload quota resets automatically every day at midnight PST. The pipeline will resume posting on the next scheduled run.";
+            } else if (lower.includes('unaudited_client') || lower.includes('self_only') || lower.includes('access_token_invalid')) {
+                cause = "TikTok Developer App Sandbox Restriction or Token Expiry.";
+                fix = "If access token invalid: run python tiktok_publisher.py to refresh local token. Once your TikTok Developer App is approved for production, videos will post publicly.";
+            } else if (lower.includes('missing') || lower.includes('no creds')) {
+                cause = "Missing API Credentials / Secrets.";
+                fix = "Ensure all platform API tokens are configured in your local .env file and GitHub Repository Secrets.";
+            }
+
+            document.getElementById('errorModalTitle').innerText = `${platform} Upload Diagnostics`;
+            document.getElementById('errorModalPlatform').innerText = `Detailed Failure Analysis for ${platform}`;
+            document.getElementById('errorModalCause').innerText = cause;
+            document.getElementById('errorModalFix').innerText = fix;
+            document.getElementById('errorModalTrace').innerText = raw;
+            document.getElementById('errorModal').classList.remove('hidden');
+        }
+
+        function closeErrorModal() {
+            document.getElementById('errorModal').classList.add('hidden');
+        }
+
+        // Format status badge pill with diagnostic click handler
+        function formatStatusBadge(platform, statusStr) {
             if (!statusStr) return `<span class="text-slate-500">-</span>`;
             
             const raw = String(statusStr);
@@ -390,8 +470,8 @@
             if (s.includes('PUBLISHED')) {
                 return `<span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold text-[10px] inline-flex items-center"><i class="fa-solid fa-check mr-1 text-[9px]"></i> Uploaded</span>`;
             } else if (s.includes('FAILED')) {
-                const reason = raw.includes('(') ? raw.slice(raw.indexOf('(') + 1, raw.lastIndexOf(')')).trim() : 'API authorization or credential error';
-                return `<span class="px-2.5 py-0.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 font-semibold text-[10px] inline-flex items-center cursor-help" title="Failure details: ${reason}"><i class="fa-solid fa-circle-exclamation mr-1 text-[9px]"></i> Failed</span>`;
+                const escapedRaw = raw.replace(/'/g, "\\'").replace(/"/g, "&quot;");
+                return `<button onclick="diagnoseError('${platform}', '${escapedRaw}')" class="px-2.5 py-0.5 rounded-full bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/20 font-semibold text-[10px] inline-flex items-center cursor-pointer transition shadow-sm" title="Click to view detailed error cause and resolution"><i class="fa-solid fa-circle-exclamation mr-1 text-[9px]"></i> Failed (Click Cause)</button>`;
             } else {
                 return `<span class="px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700 font-medium text-[10px] inline-flex items-center" title="Skipped: Credentials missing in GitHub Repository Secrets"><i class="fa-solid fa-circle-minus mr-1 text-[9px]"></i> Skipped</span>`;
             }
