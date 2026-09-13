@@ -187,5 +187,110 @@
     "date_used": "2026-09-09",
     "tagline": "The AI-powered search engine for scientific research",
     "affiliate_slug": "consensus"
+  },
+  {
+    "name": "Manus AI",
+    "category": "Autonomous AI Agents",
+    "date_used": "2026-09-10",
+    "tagline": "Turn complex tasks into completed work instantly",
+    "affiliate_slug": "manusai"
+  },
+  {
+    "name": "Flux.1",
+    "category": "Image Generation",
+    "date_used": "2026-09-10",
+    "tagline": "State-of-the-art open image generation",
+    "affiliate_slug": "flux.1"
+  },
+  {
+    "name": "HeyGen",
+    "category": "AI Video & Translation",
+    "date_used": "2026-09-10",
+    "tagline": "Hyper-realistic AI video avatars in seconds",
+    "affiliate_slug": "heygen"
+  },
+  {
+    "name": "NotebookLM",
+    "category": "Research Notebook",
+    "date_used": "2026-09-12",
+    "tagline": "Interactive Audio Podcast Notebook",
+    "affiliate_slug": "notebooklm"
+  },
+  {
+    "name": "Consensus AI",
+    "category": "Scientific Research",
+    "date_used": "2026-09-12",
+    "tagline": "Evidence-Based Science Search",
+    "affiliate_slug": "consensusai"
+  },
+  {
+    "name": "Runway Gen-3",
+    "category": "Video Synthesis",
+    "date_used": "2026-09-12",
+    "tagline": "Photorealistic Video Generation",
+    "affiliate_slug": "runwaygen-3"
+  },
+  {
+    "name": "Wispr Flow",
+    "category": "Voice Productivity",
+    "date_used": "2026-09-12",
+    "tagline": "Type at the speed of thought",
+    "affiliate_slug": "wisprflow"
+  },
+  {
+    "name": "Hedra",
+    "category": "Video Generation",
+    "date_used": "2026-09-12",
+    "tagline": "Hyper-expressive AI character creation",
+    "affiliate_slug": "hedra"
+  },
+  {
+    "name": "Ideogram",
+    "category": "Design & Imagery",
+    "date_used": "2026-09-12",
+    "tagline": "Flawless AI typography and graphic design",
+    "affiliate_slug": "ideogram"
+  },
+  {
+    "name": "Luma Dream Machine",
+    "category": "3D Video Motion",
+    "date_used": "2026-09-12",
+    "tagline": "High-Speed Camera Motion Video",
+    "affiliate_slug": "lumadreammachine"
+  },
+  {
+    "name": "Opus Clip",
+    "category": "Shorts Repurposing",
+    "date_used": "2026-09-12",
+    "tagline": "Long Video to Viral Short Clips",
+    "affiliate_slug": "opusclip"
+  },
+  {
+    "name": "Pika 1.5",
+    "category": "Video FX & Physics",
+    "date_used": "2026-09-12",
+    "tagline": "Generative Video Effects & Physics",
+    "affiliate_slug": "pika1.5"
+  },
+  {
+    "name": "Midjourney v6",
+    "category": "Photorealistic Image",
+    "date_used": "2026-09-12",
+    "tagline": "State-of-the-Art Image Generation",
+    "affiliate_slug": "midjourneyv6"
+  },
+  {
+    "name": "Ideogram 2.0",
+    "category": "Typography Design",
+    "date_used": "2026-09-12",
+    "tagline": "Accurate Text in Generative Art",
+    "affiliate_slug": "ideogram2.0"
+  },
+  {
+    "name": "Magnific AI",
+    "category": "Image Upscaling",
+    "date_used": "2026-09-12",
+    "tagline": "Hallucinatory AI Upscaler & Enhancer",
+    "affiliate_slug": "magnificai"
   }
 ]

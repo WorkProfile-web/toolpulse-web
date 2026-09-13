@@ -142,5 +142,145 @@
       "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
       "tiktok": "FAILED (TikTok Init response missing publish_id or upload_url: {'dat)"
     }
+  },
+  {
+    "timestamp": "2026-09-10T18:37:16",
+    "channel": "ToolPulse (Tech)",
+    "video_id": "vUzFjKwJQHo",
+    "youtube_url": "https://youtu.be/vUzFjKwJQHo",
+    "title": "3 AI Tools That Feel Illegal to Know in 2026",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-10T19:12:56",
+    "channel": "Stoic Pulse (Stoicism)",
+    "video_id": "knEtVxLb4IY",
+    "youtube_url": "https://youtu.be/knEtVxLb4IY",
+    "title": "3 Stoic Secrets to Stop Overthinking & Build Mental Strength",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-10T19:49:12",
+    "channel": "Echo Pulse (Story Time)",
+    "video_id": "txQATtCh7E8",
+    "youtube_url": "https://youtu.be/txQATtCh7E8",
+    "title": "The Corpse That Tricked Hitler: Operation Mincemeat Explaine",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-12T13:52:16",
+    "channel": "ToolPulse (Tech)",
+    "video_id": "lt-jAJTUYHw",
+    "youtube_url": "https://youtu.be/lt-jAJTUYHw",
+    "title": "3 AI Tools That Feel Illegal to Know in 2026",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-12T13:57:57",
+    "channel": "Stoic Pulse (Stoicism)",
+    "video_id": "Xm5rA54w3BI",
+    "youtube_url": "https://youtu.be/Xm5rA54w3BI",
+    "title": "3 Stoic Secrets to Stop Caring What People Think & Build Con",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-12T14:02:48",
+    "channel": "Echo Pulse (Story Time)",
+    "video_id": "q3ysb2cSKzo",
+    "youtube_url": "https://youtu.be/q3ysb2cSKzo",
+    "title": "How Cats Defeated an Empire's Army | Psychological Tactic 52",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-13T13:18:34",
+    "channel": "ToolPulse (Tech)",
+    "video_id": "CUktdKd5g68",
+    "youtube_url": "https://youtu.be/CUktdKd5g68",
+    "title": "3 Shorts Repurposing AI Tools That Feel Illegal to Know in 2026",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-13T13:23:51",
+    "channel": "Stoic Pulse (Stoicism)",
+    "video_id": "Amx_D1PBCgo",
+    "youtube_url": "https://youtu.be/Amx_D1PBCgo",
+    "title": "3 Ancient Stoic Rules for Unshakable Focus",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-13T13:30:28",
+    "channel": "Echo Pulse (Story Time)",
+    "video_id": "XNfYZ2l9k3I",
+    "youtube_url": "https://youtu.be/XNfYZ2l9k3I",
+    "title": "The Unseen Mind Game of Napoleon Bonaparte",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-13T16:19:42",
+    "channel": "ToolPulse (Tech)",
+    "video_id": "qiMOoI5IKkk",
+    "youtube_url": "https://youtu.be/qiMOoI5IKkk",
+    "title": "3 Code Completion AI Tools That Feel Illegal to Know in 2026",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
   }
 ]
