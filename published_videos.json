@@ -282,5 +282,19 @@
       "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
       "tiktok": "PUBLISHED"
     }
+  },
+  {
+    "timestamp": "2026-09-14T13:18:19",
+    "channel": "ToolPulse (Tech)",
+    "video_id": "EuF_FEPxTnI",
+    "youtube_url": "https://youtu.be/EuF_FEPxTnI",
+    "title": "3 Coding & Logic AI Tools That Feel Illegal to Know in 2026",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
   }
 ]
