@@ -296,5 +296,47 @@
       "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
       "tiktok": "PUBLISHED"
     }
+  },
+  {
+    "timestamp": "2026-09-15T13:17:44",
+    "channel": "ToolPulse (Tech)",
+    "video_id": "7k7W2dZ0c0Q",
+    "youtube_url": "https://youtu.be/7k7W2dZ0c0Q",
+    "title": "3 Visual Automation AI Tools That Feel Illegal to Know in 2026",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-15T13:19:53",
+    "channel": "Stoic Pulse (Stoicism)",
+    "video_id": "N/A",
+    "youtube_url": "N/A",
+    "title": "How Seneca Conquered Anxiety and Overthinking",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "FAILED (could not locate runnable browser)",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-15T13:21:50",
+    "channel": "Echo Pulse (Story Time)",
+    "video_id": "N/A",
+    "youtube_url": "N/A",
+    "title": "The Genius Mind Game That Saved a Kingdom",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "FAILED (could not locate runnable browser)",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
   }
 ]
