@@ -338,5 +338,47 @@
       "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
       "tiktok": "PUBLISHED"
     }
+  },
+  {
+    "timestamp": "2026-09-16T13:17:36",
+    "channel": "ToolPulse (Tech)",
+    "video_id": "N/A",
+    "youtube_url": "N/A",
+    "title": "3 Voice Synthesis AI Tools That Feel Illegal to Know in 2026",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "FAILED (could not locate runnable browser)",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-16T13:19:51",
+    "channel": "Stoic Pulse (Stoicism)",
+    "video_id": "N/A",
+    "youtube_url": "N/A",
+    "title": "3 Stoic Secrets to Never Get Angry Again",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "FAILED (could not locate runnable browser)",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-16T13:22:20",
+    "channel": "Echo Pulse (Story Time)",
+    "video_id": "N/A",
+    "youtube_url": "N/A",
+    "title": "3 Genius Tactics History Generals Used to Win",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "FAILED (could not locate runnable browser)",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
   }
 ]
