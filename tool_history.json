@@ -292,5 +292,12 @@
     "date_used": "2026-09-12",
     "tagline": "Hallucinatory AI Upscaler & Enhancer",
     "affiliate_slug": "magnificai"
+  },
+  {
+    "name": "n8n.io",
+    "category": "Self-Hosted Workflow",
+    "date_used": "2026-09-21",
+    "tagline": "Privacy-First Node Automation",
+    "affiliate_slug": "n8n.io"
   }
 ]
