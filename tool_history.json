@@ -299,5 +299,12 @@
     "date_used": "2026-09-21",
     "tagline": "Privacy-First Node Automation",
     "affiliate_slug": "n8n.io"
+  },
+  {
+    "name": "Notion AI",
+    "category": "Workspace Assistant",
+    "date_used": "2026-09-23",
+    "tagline": "Connected Workspace Intelligence",
+    "affiliate_slug": "notionai"
   }
 ]
