@@ -716,5 +716,47 @@
       "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
       "tiktok": "PUBLISHED"
     }
+  },
+  {
+    "timestamp": "2026-09-24T13:42:58",
+    "channel": "ToolPulse (Tech)",
+    "video_id": "plgLev-VJGs",
+    "youtube_url": "https://youtu.be/plgLev-VJGs",
+    "title": "3 UI Design to Code AI Tools That Feel Illegal to Know in 2026",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-24T13:45:03",
+    "channel": "Stoic Pulse (Stoicism)",
+    "video_id": "7tncoQ1JFfs",
+    "youtube_url": "https://youtu.be/7tncoQ1JFfs",
+    "title": "3 Stoic Rules to Instantly Master Your Mind",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-24T13:48:32",
+    "channel": "Echo Pulse (Story Time)",
+    "video_id": "ahwhAYpIPDo",
+    "youtube_url": "https://youtu.be/ahwhAYpIPDo",
+    "title": "The Unseen Mind Game of Napoleon Bonaparte",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
   }
 ]
