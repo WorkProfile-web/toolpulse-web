@@ -758,5 +758,47 @@
       "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
       "tiktok": "PUBLISHED"
     }
+  },
+  {
+    "timestamp": "2026-09-25T13:17:08",
+    "channel": "ToolPulse (Tech)",
+    "video_id": "txoOMEsi5Z4",
+    "youtube_url": "https://youtu.be/txoOMEsi5Z4",
+    "title": "3 Research Notebook AI Tools That Feel Illegal to Know in 2026",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-25T13:19:14",
+    "channel": "Stoic Pulse (Stoicism)",
+    "video_id": "SqRqxBr3qvg",
+    "youtube_url": "https://youtu.be/SqRqxBr3qvg",
+    "title": "3 Stoic Rules to Instantly Master Your Mind",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-25T13:21:34",
+    "channel": "Echo Pulse (Story Time)",
+    "video_id": "Ji1x0caro9g",
+    "youtube_url": "https://youtu.be/Ji1x0caro9g",
+    "title": "3 Genius Tactics History Generals Used to Win",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
   }
 ]
