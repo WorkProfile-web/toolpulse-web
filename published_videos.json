@@ -800,5 +800,47 @@
       "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
       "tiktok": "PUBLISHED"
     }
+  },
+  {
+    "timestamp": "2026-09-26T13:17:58",
+    "channel": "ToolPulse (Tech)",
+    "video_id": "J0KCqQHjJ5U",
+    "youtube_url": "https://youtu.be/J0KCqQHjJ5U",
+    "title": "3 Music Generation AI Tools That Feel Illegal to Know in 2026",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-26T13:20:30",
+    "channel": "Stoic Pulse (Stoicism)",
+    "video_id": "OIfJetBrt5A",
+    "youtube_url": "https://youtu.be/OIfJetBrt5A",
+    "title": "3 Ancient Stoic Rules for Unshakable Focus",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-26T13:22:34",
+    "channel": "Echo Pulse (Story Time)",
+    "video_id": "-vSHJXajmLo",
+    "youtube_url": "https://youtu.be/-vSHJXajmLo",
+    "title": "The Genius Mind Game That Saved a Kingdom",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
   }
 ]
