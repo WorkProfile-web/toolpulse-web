@@ -884,5 +884,47 @@
       "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
       "tiktok": "PUBLISHED"
     }
+  },
+  {
+    "timestamp": "2026-09-28T13:17:41",
+    "channel": "ToolPulse (Tech)",
+    "video_id": "TPTwgsBDSpE",
+    "youtube_url": "https://youtu.be/TPTwgsBDSpE",
+    "title": "3 Generative Video AI Tools That Feel Illegal to Know in 2026",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-28T13:20:03",
+    "channel": "Stoic Pulse (Stoicism)",
+    "video_id": "TfLLdVNcP3A",
+    "youtube_url": "https://youtu.be/TfLLdVNcP3A",
+    "title": "How Seneca Conquered Anxiety and Overthinking",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-28T13:22:18",
+    "channel": "Echo Pulse (Story Time)",
+    "video_id": "w_-x9STN5nE",
+    "youtube_url": "https://youtu.be/w_-x9STN5nE",
+    "title": "The Mind Game That Tricked an Empire",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
   }
 ]
