@@ -926,5 +926,47 @@
       "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
       "tiktok": "PUBLISHED"
     }
+  },
+  {
+    "timestamp": "2026-09-29T13:18:41",
+    "channel": "ToolPulse (Tech)",
+    "video_id": "Iyva8llJcTk",
+    "youtube_url": "https://youtu.be/Iyva8llJcTk",
+    "title": "3 Fullstack Web Studio AI Tools That Feel Illegal to Know in 2026",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-29T13:20:45",
+    "channel": "Stoic Pulse (Stoicism)",
+    "video_id": "bG03fva4Evw",
+    "youtube_url": "https://youtu.be/bG03fva4Evw",
+    "title": "3 Stoic Rules to Instantly Master Your Mind",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-29T13:23:01",
+    "channel": "Echo Pulse (Story Time)",
+    "video_id": "GA8eDk_hcIw",
+    "youtube_url": "https://youtu.be/GA8eDk_hcIw",
+    "title": "The Unseen Mind Game of Napoleon Bonaparte",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
   }
 ]
