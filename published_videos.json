@@ -968,5 +968,47 @@
       "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
       "tiktok": "PUBLISHED"
     }
+  },
+  {
+    "timestamp": "2026-09-30T13:17:26",
+    "channel": "ToolPulse (Tech)",
+    "video_id": "sTlgzJpV-BQ",
+    "youtube_url": "https://youtu.be/sTlgzJpV-BQ",
+    "title": "3 Video Synthesis AI Tools That Feel Illegal to Know in 2026",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-30T13:19:44",
+    "channel": "Stoic Pulse (Stoicism)",
+    "video_id": "kMpFCj10mPE",
+    "youtube_url": "https://youtu.be/kMpFCj10mPE",
+    "title": "How Seneca Conquered Anxiety and Overthinking",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-09-30T13:22:02",
+    "channel": "Echo Pulse (Story Time)",
+    "video_id": "ce05eN5WXmQ",
+    "youtube_url": "https://youtu.be/ce05eN5WXmQ",
+    "title": "The Unseen Mind Game of Napoleon Bonaparte",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
   }
 ]
