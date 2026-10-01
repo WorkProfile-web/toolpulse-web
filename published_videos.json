@@ -1010,5 +1010,47 @@
       "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
       "tiktok": "PUBLISHED"
     }
+  },
+  {
+    "timestamp": "2026-10-01T13:16:59",
+    "channel": "ToolPulse (Tech)",
+    "video_id": "qYP7GrQqFE4",
+    "youtube_url": "https://youtu.be/qYP7GrQqFE4",
+    "title": "3 Music Generation AI Tools That Feel Illegal to Know in 2026",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-10-01T13:19:09",
+    "channel": "Stoic Pulse (Stoicism)",
+    "video_id": "cwKc_BFWY8g",
+    "youtube_url": "https://youtu.be/cwKc_BFWY8g",
+    "title": "How Marcus Aurelius Stayed Calm in Chaos",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
+  },
+  {
+    "timestamp": "2026-10-01T13:21:27",
+    "channel": "Echo Pulse (Story Time)",
+    "video_id": "NMXWcjaGd2s",
+    "youtube_url": "https://youtu.be/NMXWcjaGd2s",
+    "title": "The Genius Mind Game That Saved a Kingdom",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "PUBLISHED",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
   }
 ]
