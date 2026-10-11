@@ -1402,5 +1402,19 @@
       "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
       "tiktok": "PUBLISHED"
     }
+  },
+  {
+    "timestamp": "2026-10-11T13:20:09",
+    "channel": "Stoic Pulse (Stoicism)",
+    "video_id": "N/A",
+    "youtube_url": "N/A",
+    "title": "How Marcus Aurelius Stayed Calm in Chaos",
+    "status": "PUBLISHED",
+    "platform_statuses": {
+      "youtube": "FAILED (could not locate runnable browser)",
+      "facebook": "PUBLISHED",
+      "instagram": "FAILED (Instagram Reel Container Init failed: {'error': {'message': )",
+      "tiktok": "PUBLISHED"
+    }
   }
 ]
